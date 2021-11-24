@@ -13,6 +13,7 @@ public class MemberRepository {
 
     public Long save(Member member){
         em.persist(member);
+        // command와 retrieve를 분리하는 것이 좋음 (side effect 방지를 위해)
         return member.getId();
     }
 
