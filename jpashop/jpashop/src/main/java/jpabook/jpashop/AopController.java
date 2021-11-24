@@ -1,5 +1,6 @@
 package jpabook.jpashop;
 
+import jpabook.jpashop.annotation.LogExclusion;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,6 +12,12 @@ public class AopController {
 
     @GetMapping("/hello")
     public void hello(){
-        logger.info("hello AOP");
+        logger.info("# enter to hello");
+    }
+
+    @GetMapping("/my")
+    @LogExclusion
+    public void my(){
+        logger.info("# enter to my");
     }
 }
