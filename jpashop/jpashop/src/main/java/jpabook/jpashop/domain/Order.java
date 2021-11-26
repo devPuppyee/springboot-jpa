@@ -17,7 +17,7 @@ public class Order {
     @Column(name = "order_id")
     private Long id;
 
-    @ManyToOne // 주문 : 회원 = 多 : 1
+    @ManyToOne(fetch = FetchType.LAZY) // 주문 : 회원 = 多 : 1
     @JoinColumn(name="member_id") // 외래키를 포함할 엔티티에 @joinColumn으로 FK의 이름을 적어주기
     private Member member;
 
